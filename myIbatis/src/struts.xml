@@ -1,0 +1,36 @@
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtd/struts-2.0.dtd">
+<struts>
+	  <!-- lph action start -->
+    <package name="com.questionnaire.action" extends="struts-default">
+    	<!-- 问卷action -->
+    	<action name="indagateAction" class="com.questionnaire.action.IndagateAction">
+    		<result name="getList_Success">/proj/questionnaire/naire_list.jsp</result>
+    		
+    		<result name="Indagate_page">/proj/questionnaire/show/show_indagate.jsp</result>
+    		<result name="save_success" type="redirectAction">
+				  <param name="actionName">indagateAction!getIndagateList.action</param>
+			</result>
+    		
+    	</action>
+    	
+    	<!-- 问卷结果action -->
+    	<action name="indagateResultAction" class="com.questionnaire.action.IndagateResultAction">
+    		<result name="save_success" type="redirectAction">
+				  <param name="actionName">indagateResultAction!getInda_ResultList.action</param>
+				  <param name=""></param>
+				  <param name="indagateResult.inda_id">${#}</param>
+			</result>
+			<result name="getList_Success">/proj/questionnaire/naire_result_list.jsp</result>
+			<result name="Indagate_Detail_page">/proj/questionnaire/show_indagateResult.jsp</result>
+    		
+    	</action>
+    </package>
+     <package name="com.cron" extends="struts-default">
+    	<!-- test action -->
+    	<action name="testAction" class="com.cron.TestAction"></action>
+     </package>
+    <!-- lph action end -->
+    
+    </struts>

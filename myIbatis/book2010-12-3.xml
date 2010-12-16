@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<books>
+  <!--2010-12-3 lph-->
+  <book show="yes">
+    <title>java代码之重构</title>
+    <price>65.80</price>
+  </book>
+  <book show="no">
+    <title>Java企业级应用</title>
+    <price>98.0</price>
+  </book>
+</books>

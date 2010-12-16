@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+	"http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap>
+
+	<!-- 查询问卷 -->
+	<select id="Q_getIndagateList"  parameterClass="java.util.Map" resultClass="com.questionnaire.entity.Indagate">  
+		SELECT $rows$ FROM tb_indagate where $search$ order by inda_id
+	</select>
+	<!-- 保存问卷 -->
+	<insert id="Q_saveIndagate"  parameterClass="com.questionnaire.entity.Indagate">  
+		insert into tb_indagate(inda_no,inda_title,inda_theme,inda_person,inda_start_time,inda_end_time,channelId) values(#inda_no#,#inda_title#,#inda_theme#,#inda_person#,#inda_start_time#,#inda_end_time#,#channelId#)
+	</insert>
+	<!-- 查询问题 -->
+	<select id="Q_getQuestionList"  parameterClass="java.util.Map" resultClass="com.questionnaire.entity.Question">  
+		SELECT $rows$ FROM tb_question where $search$
+	</select>
+	<!-- 保存问题 -->
+	<insert id="Q_saveQuestion"  parameterClass="com.questionnaire.entity.Question">  
+		insert into tb_question(inda_id,quest_id,ques_no,ques_content,ques_description) values(#inda_id#,#quest_id#,#ques_no#,#ques_content#,#ques_description#)
+	</insert>
+	<!-- 保存答案 -->
+	<insert id="Q_saveAnswer"  parameterClass="com.questionnaire.entity.Answer" >  
+		insert into tb_answer(ques_id,ans_value,ans_content,ans_description) values(#ques_id#,#ans_value#,#ans_content#,#ans_description#)
+	</insert>
+	<!-- 查询答案 -->
+	<select id="Q_getAnswerList"  parameterClass="java.util.Map" resultClass="com.questionnaire.entity.Answer">
+		SELECT $rows$ FROM tb_answer where $search$
+	</select>
+	<!-- 删除问卷 -->
+	<delete id="Q_deleteIndagate"  parameterClass="java.util.Map">  
+		delete FROM tb_indagate where $search$
+	</delete>
+	<!--  删除问题 -->
+	<delete id="Q_deleteQuestion"  parameterClass="java.util.Map">  
+		delete FROM tb_question where $search$
+	</delete>
+	<!--  删除答案 -->
+	<delete id="Q_deleteAnswer"  parameterClass="java.util.Map">  
+		delete FROM tb_answer where $search$
+	</delete>
+	<!--  删除调查结果 -->
+	<delete id="Q_deleteIndagateResult"  parameterClass="java.util.Map">  
+		delete FROM tb_indagate_result where $search$
+	</delete>
+	<!--  删除调查结果关系表 -->
+	<delete id="Q_deleteIndagateResultR"  parameterClass="java.util.Map">  
+		delete FROM tb_indagate_result_r where $search$
+	</delete>
+	
+
+	<!-- 保存问卷结果 -->
+	<insert id="Q_saveIndagateResult"  parameterClass="com.questionnaire.entity.IndagateResult" >  
+		insert into tb_indagate_result(indar_no,inda_id,indar_person,indar_start_time,indar_end_time,indar_time) values(#indar_no#,#inda_id#,#indar_person#,#indar_start_time#,#indar_end_time#,#indar_time#)
+	</insert>
+	<!-- 查询问卷结果 -->
+	<select id="Q_getIndagateResultList"  parameterClass="java.util.Map" resultClass="com.questionnaire.entity.IndagateResult">  
+		SELECT $rows$ FROM tb_indagate_result where $search$ order by indar_id
+	</select>
+	<!-- 保存问卷结果 -->
+	<insert id="Q_saveIndagateResult_r"  parameterClass="com.questionnaire.entity.IndagateResultR" >  
+		insert into tb_indagate_result_r(indar_id,ques_id,ans_id) values(#indar_id#,#ques_id#,#ans_id#)
+	</insert>
+	<!-- 查询问卷结果 -->
+	<select id="Q_getIndagateResultRList"  parameterClass="java.util.Map" resultClass="com.questionnaire.entity.IndagateResultR">  
+		SELECT $rows$ FROM tb_indagate_result_r where $search$
+	</select>
+</sqlMap>
