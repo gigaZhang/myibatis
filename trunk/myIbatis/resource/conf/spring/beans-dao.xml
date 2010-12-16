@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	
+	
+	<!-- lph  questionnaire  start -->
+	<bean id="indagateDao" class="com.questionnaire.dao.impl.IndagateDaoImpl" autowire="byName">
+		<property name="dataSource" ref="questionnaire_db" />
+	</bean>
+	<bean id="questionDao" class="com.questionnaire.dao.impl.QuestionDaoImpl" autowire="byName">
+		<property name="dataSource" ref="questionnaire_db" />
+	</bean>
+	<bean id="answerDao" class="com.questionnaire.dao.impl.AnswerDaoImpl" autowire="byName">
+		<property name="dataSource" ref="questionnaire_db" />
+	</bean>
+	<bean id="indagateResultDao" class="com.questionnaire.dao.impl.IndagateResultDaoImpl" autowire="byName">
+		<property name="dataSource" ref="questionnaire_db" />
+	</bean>
+	<bean id="indagateResultRDao" class="com.questionnaire.dao.impl.IndagateResultRDaoImpl" autowire="byName">
+		<property name="dataSource" ref="questionnaire_db" />
+	</bean>
+	<!-- lph  questionnaire  end -->
+	
+</beans>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<books>
+	<book show="yes">
+		<title>book1</title>
+	</book>
+	<book show="no">
+		<title>book2</title>
+	</book>
+	<owner>lph</owner>
+</books>

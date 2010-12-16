@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+	
+	<!-- 激活利用注解进行装配 -->
+	<context:annotation-config />
+	<!-- 指定数据库的配置文件 -->
+	<bean id="propertiesConfig" 
+	class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<value>classpath:conf/sqlmap/jdbc.properties</value>
+		</property>
+	</bean>
+	
+	<!-- 指定数据库事务操作的XML -->
+	<bean id="sqlMapClient" 
+		class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation">
+			<value>classpath:conf/sqlmap/sqlmap-config.xml</value>
+		</property>
+	</bean>
+
+	<!-- 加载数据配置 -->
+	<bean id="questionnaire_db"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>${JDBC.Driver}</value>
+		</property>
+		<property name="url">
+			<value>${JDBC.questionnaireConnectionURL}</value>
+		</property>
+		<property name="username">
+			<value>${JDBC.questionnaireUsername}</value>
+		</property>
+		<property name="password">
+			<value>${JDBC.questionnairePassword}</value>
+		</property>
+	</bean>
+	<import resource="conf/spring/beans-service.xml" />
+	<import resource="conf/spring/beans-dao.xml" />
+</beans>
