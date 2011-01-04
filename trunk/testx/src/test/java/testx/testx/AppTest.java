@@ -1,4 +1,4 @@
-package mantestx.testx;
+package testx.testx;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
