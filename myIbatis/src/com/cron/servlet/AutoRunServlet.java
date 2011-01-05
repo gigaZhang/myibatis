@@ -36,6 +36,7 @@ public class AutoRunServlet extends HttpServlet {
 			CronExpression exp = new CronExpression("* * * ? * *");
 			cronTrigger.setCronExpression(exp);
 			sched.scheduleJob(job,cronTrigger);
+			
 			//sched.start();
 		}catch(Exception ex){
 			ex.printStackTrace();
