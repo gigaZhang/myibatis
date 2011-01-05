@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+	"http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap>
+
+	<!-- 查询问卷 -->
+	<select id="Q_getIndagateList"  parameterClass="java.util.Map" resultClass="com.questionnaire.entity.Indagate">  
+		SELECT $rows$ FROM tb_indagate where $search$ order by inda_id
+	</select>
+	<!-- 保存问卷 -->
+	<insert id="Q_saveIndagate"  parameterClass="com.questionnaire.entity.Indagate">  
+		insert into tb_indagate(inda_no,inda_title,inda_theme,inda_person,inda_start_time,inda_end_time,channelId) values(#inda_no#,#inda_title#,#inda_theme#,#inda_person#,#inda_start_time#,#inda_end_time#,#channelId#)
+	</insert>
+	
+</sqlMap>
