@@ -17,6 +17,7 @@ public class Test implements Job{
 		// TODO Auto-generated method stub
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 		System.out.println("----work-----"+sdf.format(new Date()));
+		
 	}
 	
 
