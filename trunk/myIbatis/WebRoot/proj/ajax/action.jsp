@@ -4,6 +4,10 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
+<% 
+				out.print("<script>alert('发布成功,请等待审核通过后显示');window.parent.location.href=window.parent.location.href;</script>");
+%>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -19,19 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 
-	<style>
-		input{border-top:0px solid #b0bec7;border-bottom:1px solid #b0bec7;border-left:0px solid #b0bec7;border-right:0px solid #b0bec7;}
-		
-	</style>
+	
   </head>
-  
-  <body>
- 	<form name="testfr" action="/myIbatis/proj/ajax/action.jsp" target="dologin"  method="post">
- 		DOOR:<input  type="text" name="username"></input><Br>
- 		KAY:<input type="text" name="password"></input><Br>
- 		 <input type="submit"  value="登录" />
- 		 
- 	</form>
- 	<iframe name="dologin" style="display:none"></iframe>
-  </body>
-</html>
+  <body></body>
+ </html>

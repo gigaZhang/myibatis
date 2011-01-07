@@ -3,6 +3,8 @@ package com.mystudy;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import uk.ltd.getahead.dwr.DWRServlet;
+
 public class HTML_Handle {
 
 	  /**  
@@ -15,7 +17,8 @@ public class HTML_Handle {
 	        Matcher m=patt.matcher(content);   
 	        while(m.find()){   
 	            content=content.replaceFirst("<[^>]+>([^<]*)</[^>]+>", m.group(1).toString());   
-	        }   
+	        }  
+	        
 	        System.out.println(content);   
 	         //ÀÉ¾Æ15Äê³Âºì»¨ÀÉ¾Æ53¡ã500ML£¬Â¥À¼ÉßÁúÖé¸ê±Ú¸Éºì£¨ÌúºĞ£©750ML£¬×éºÏ¼Û699Ôª¡£   
 	    }   
