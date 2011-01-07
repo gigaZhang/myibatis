@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'index.jsp' starting page</title>
+    <title>study ajax</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -18,39 +18,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+	<script type="test/javascript" src="dwr/interface/JDate.js"></script>
+	<script type="test/javascript" src="dwr/engine.js"></script>
+	<script>
+		function init(){
+			JDate.getYear(load);
+		}
+		function load(date){
+			alert(data+1900+'年')；
+		}
+	</script>
+	
   </head>
   
-  <body>
-  <div style="font-size:30px;color:red;">制作播放器</div>
-  <div>
-    <object id="mPlayer1" width=300 height=300 classid="CLSID:6BF52A52-394A-11D3-B153-00C04F79FAA6">
-		<param name="URL" value="f://b77c0be49f226269_2.wma">
-        <param name="rate" value="1"><!-- 速率 -->
-        <param name="balance" value="0"><!-- 均衡 -->
-        <param name="currentPosition" value="0"><!-- 当前位置 -->
-        <param name="defaultFrame" value><!-- 默认框架 -->
-        <param name="playCount" value="100"><!-- 播放总数 -->
-        <param name="autoStart" value="1">
-        <param name="currentMarker" value="0">
-        <param name="invokeURLs" value="1">
-        <param name="baseURL" value>
-        <param name="volume" value="100">
-        <param name="mute" value="0">
-        <param name="uiMode" value="mini">
-        <param name="stretchToFit" value="0">
-        <param name="windowlessVideo" value="0">
-        <param name="enabled" value="1">
-        <param name="enableContextMenu" value="1">
-        <param name="fullScreen" value="0">
-        <param name="SAMIStyle" value="4">
-        <param name="SAMILang" value="2">
-        <param name="SAMIFilename" value>
-        <param name="captioningID" value>
-        <param name="enableErrorDialogs" value="0">
-        <param name="_cx" value="7779">
-        <param name="_cy" value="1693">
-      </object>
-     </div>
-     <jsp:forward page="/indagateAction!getIndagateList.action"></jsp:forward>
+  <body onload="init()">
+ 	<form>
+ 		DOOR:<input type="text" name="username"></input><Br>
+ 		KAY:<input type="text" name="password"></input><Br>
+ 		 <button type="submit" value="登录" />登录</button>
+ 	</form>
   </body>
 </html>

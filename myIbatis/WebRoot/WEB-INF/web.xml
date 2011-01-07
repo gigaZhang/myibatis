@@ -45,6 +45,16 @@
 		<filter-name>ValidFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	
+	<!-- dwr -->
+	<filter>
+		<filter-name>dwr-invoker</filter-name>
+		<filter-class>uk.ltd.getahead.dwr.DWRServlet</filter-class>
+	</filter>
+	<filter-mapping>	
+		<filter-name>dwr-invoker</filter-name>
+		<url-pattern>/dwr/*</url-pattern>
+	</filter-mapping>
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
