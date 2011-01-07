@@ -30,7 +30,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  		DOOR:<input  type="text" name="username"></input><Br>
  		KAY:<input type="text" name="password"></input><Br>
  		 <input type="submit"  value="登录" />
- 		 
  	</form>
  	<iframe name="dologin" style="display:none"></iframe>
   </body>

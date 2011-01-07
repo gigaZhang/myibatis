@@ -4,9 +4,6 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
-<% 
-				out.print("<script>alert('发布成功,请等待审核通过后显示');window.parent.location.href=window.parent.location.href;</script>");
-%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -25,5 +22,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 	
   </head>
-  <body></body>
+  <body>
+  <%
+  	String username = request.getParameter("username");
+  	String password = request.getParameter("password");
+  	if("lph".equals(username) && "lph".equals(password)){
+  		out.print("<script>alert('登录成功！');window.parent.location.href=window.parent.location.href;</script>");
+  	}else{
+  		out.print("<script>alert('登录失败！');window.parent.location.href=window.parent.location.href;</script>");
+  	}
+  	
+   %>
+  </body>
  </html>
