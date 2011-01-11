@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>page3</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="js/jquery.js" ></script>
+    <script type="text/javascript" src="js/jquery.bigpage.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/bigpage.css" > 
+  
+<script type="text/javascript">
+	
+	$(function(){
+		//data_为字符串，tr之间用分号分隔，td之间用逗号分隔
+		var data_ = "javaEye,http://www.javaeye.com,★★★★★,100000/day;CSDN,http://www.csdn.net,★★★★,100000/day;新浪,http://www.sina.com.cn,★★★★,100000/day;淘宝,http://www.taobao.com,★★★★,100000/day;搜狐,http://www.sohu.com,★★★★,100000/day";
+		$("table").bigPage({data:data_,strData:{separatorTD:",",separatorTR:";"},cssWidgets:["appendToTable","eventColor"],callback:function(){
+			$("#curentPage").html(bigPage.toPage());
+			$("#count").html(bigPage.pageNumber());		
+		}});
+	})	
+</script>
+</head>
+<body>
+<br/>
+<div>源码：</div>
+<div style="background-color: #f4f4f4" >
+<pre>
+	$(function(){
+		var data_ = "javaEye,http://www.javaeye.com,★★★★★,100000/day;" + 
+			     "CSDN,http://www.csdn.net,★★★★,100000/day;" + 
+			     "新浪,http://www.sina.com.cn,★★★★,100000/day;" + 
+			     "淘宝,http://www.taobao.com,★★★★,100000/day;" + 
+			     "搜狐,http://www.sohu.com,★★★★,100000/day";
+		//strData:{separatorTD:",",separatorTR:";"} 重置td的分隔符为逗号,tr的分隔符为分号
+		$("table").bigPage({data:data_,strData:{separatorTD:",",separatorTR:";"},cssWidgets:["appendToTable","eventColor"],callback:function(){
+			$("#curentPage").html(bigPage.toPage());
+			$("#count").html(bigPage.pageNumber());		
+		}});
+	})	
+</pre>
+</div>
+<div>效果：</div>
+<br/>
+<div style="width: 600px" >
+<table class="tb1">
+	<thead>
+		<tr>
+			<th width="200px">网站名称</th>
+			<th width="100px">网址</th>
+			<th width="100px">知名度</th>
+			<th width="120px">访问量</th>
+		</tr>
+	</thead>
+	<tbody>
+	</tbody>
+</table>
+<div class="dl">
+	共&nbsp;<span id="count" style="color: red" >0</span>&nbsp;页
+	<a class="page-start" href="#" id="firstA" >第一页</a>
+	<a class="page-start" href="#" id="prevA" accesskey="p" >上一页</a>
+	<a class="page-end" href="#"  id="nextA" accesskey="n" >下一页</a>
+	<a class="page-end" href="#"  id="lastA"  >末一页</a>
+	当前&nbsp;<span style="color: red" id="curentPage"></span>&nbsp;页
+	 跳转到 <input id="toPageText" type="text" size="3" maxlength="3" > 页  <a class="page-next" href="#"  id="skipA"  >GO</a>
+</div>
+</div>
+ 	<script type="text/javascript">
+		$(function(){
+			$("#firstA").click(function(){
+				if(window.bigPage)bigPage.firstPage();
+			});
+			$("#prevA").click(function(){
+				if(window.bigPage)bigPage.prevPage();
+			});
+			$("#nextA").click(function(){
+				if(window.bigPage)bigPage.nextPage();
+			});
+			$("#lastA").click(function(){
+				if(window.bigPage)bigPage.lastPage();
+			});
+			$("#skipA").click(function(){
+				if(window.bigPage)bigPage.skipPage($("#toPageText").val());
+			});
+		});
+ 	</script>
+</body>
+</html>

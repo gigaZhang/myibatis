@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="bigPage"
+  id="myeclipse.1271566408609"
+  context-root="/bigPage"
+  j2ee-spec="5.0"
+  archive="bigPage.war">
+  <attributes>
+    <attribute name="webrootdir" value="/WebRoot" />
+  </attributes>
+</project-module>
+

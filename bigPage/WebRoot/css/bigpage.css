@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+
+.tb1{border:1px solid #ccc;}
+.tb1 th, .tb1 td{padding:2px 10px; vertical-align:middle;}
+.tb1 th{border-right:1px solid #ccc; border-bottom:1px solid #ccc; background:#FFE top repeat-x; white-space:nowrap; line-height:17px; vertical-align:middle; font-weight:normal;}
+.qh, .qh td{background:#E3FBF8;}
+.qh1, .qh1 td{background:#f4f4f4;}
+a{color:#0041D9; text-decoration:none;}
+.page-start{color: #999999;cursor: auto;width:60px;padding-left:9px!important;}
+.page-end {color: #999999;cursor: auto;width:60px;padding-right:9px!important;}
+.page-prev{width:60px;padding-left:9px!important;}
+.page-next{width:60px;padding-right:9px!important;}
+
+.dl{background:#D4E4E4;height:26px;border:1px solid #ccc;padding-top: 3PX;font-size: 14px}
