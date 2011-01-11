@@ -31,7 +31,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	}else{
   		out.print("<script>alert('登录失败！');window.parent.location.href=window.parent.location.href;</script>");
   	}
-  	
    %>
   </body>
  </html>
