@@ -8,6 +8,7 @@ import java.util.Map;
 
 import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
 
+import com.framework.common.PageProperty;
 import com.framework.dao.EntityDao;
 import com.framework.tool.Constants;
 
@@ -72,5 +73,17 @@ public class EntityDaoImpl<T> extends SqlMapClientDaoSupport implements
 	public int deleteGroup(Map param) {
 		return this.getSqlMapClientTemplate().update(
 				"deleteGroup" + poClassName, param);
+	}
+
+
+	public int findCount(PageProperty pp) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	public List<T> findPageList(PageProperty pp) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
