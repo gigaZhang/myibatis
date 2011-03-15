@@ -41,7 +41,7 @@
 	  		<s:select name="home.module" onchange="submitQuery('moduleMenu')" list="#{'优活女人-顶部':'优活女人-顶部','优活女人-时尚':'优活女人-时尚','优活女人-丽人':'优活女人-丽人','优活女人-消费':'优活女人-消费','优活女人-母婴':'优活女人-母婴','优活女人-图库':'优活女人-图库','优活女人-列表页面':'优活女人-列表页面','优活女人-折扣首页':'优活女人-折扣首页','优活女人-网购导航':'优活女人-网购导航','优活女人-网购首页':'优活女人-网购首页','优活女人-Top20':'优活女人-Top20','优活女人-图库首页':'优活女人-图库首页','优活女人-街拍首页':'优活女人-街拍首页','优活女人-时尚首页':'优活女人-时尚首页','优活女人-商场商圈':'优活女人-商场商圈','优活女人-互动通':'优活女人-互动通'}"></s:select>
 	  		<c:if test="${home.mapno > '0'}">
 				<s:select name="home.item" list="items" onchange="submitQuery('moduleMenu')"  headerKey="" headerValue="请选择区域" listValue="mhcname" listKey="mhcid"></s:select>
-				  <!--  <input type="button" name="btn" value="测试数据" onclick="submitQuery('Initial')"/> -->    
+				   <input type="button" name="btn" value="测试数据" onclick="submitQuery('Initial')"/>     
 				<c:if test="${home.txtcounts > '0'}">
 				
 					位置：<s:select name="home.place" list="places"  onchange="submitQuery('moduleMenu')" listValue="place" listKey="place"></s:select>
