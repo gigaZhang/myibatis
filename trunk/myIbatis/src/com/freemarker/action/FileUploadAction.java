@@ -19,7 +19,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
 
-import com.freemarker.entity.ImageManage;
 import com.freemarker.tool.file.ImageBuilderTool;
 import com.freemarker.tool.file.ScaleImage;
 import com.opensymphony.xwork2.ActionSupport;
@@ -159,11 +158,11 @@ public class FileUploadAction extends ActionSupport  {
 		   }
        }
        
-       if (!(tp_id == null || tp_id.equals("null") || tp_id.equals(""))){
-		   savemap = new ImageTypeAction().getSaveInfo(String.valueOf(tp_id));
-		   path = (String)savemap.get("savepath");
-		   System.out.println(path);
-       }
+//       if (!(tp_id == null || tp_id.equals("null") || tp_id.equals(""))){
+//		   savemap = new ImageTypeAction().getSaveInfo(String.valueOf(tp_id));
+//		   path = (String)savemap.get("savepath");
+//		   System.out.println(path);
+//       }
        for (int i=0;i<fileNames.length;i++){
     	  // System.out.println(shopid);
     	   if (shopid == null || shopid.equals("null"))
@@ -233,31 +232,31 @@ public class FileUploadAction extends ActionSupport  {
     		    	   else
     		    		   check[i] = "off";
 	    		    	  if (!(check[i].equals("on"))){
-	    		    		  System.out.println("不打水印");
+	    		    		  System.out.println("不打水印--mr.l");
 	    		    		 // new ImageBuilderTool().rebuildImage(path+imageFileName,path+imageFileName,1024,768,false,"","");
 	    		    	  }else {
 	    		    		  new ImageBuilderTool(). createPicMark(imageFile,getRequest().getRealPath("/images/logo.gif"));
-	    		    		  System.out.println("打水印");
+	    		    		  System.out.println("打水印--mr.l");
 	    		    	  }
 	    		   }
-    	   if (returntype.equals("IMAGE")){
-    		   ImageManage im = new ImageManage();
-    		   im.setDi_filename(filename[i]);
-    		   im.setDi_filedesc(imgdesc[i]);
-    		   im.setDi_comment(imgcomt[i]);
-    		   im.setDi_width(String.valueOf(imgwide[i]));
-    		   im.setDi_height(String.valueOf(imghigh[i]));
-    		   im.setDi_refid(String.valueOf(refid[i]));
-    		   im.setDi_tgid(tg_id);
-    		   im.setDi_tpid(tp_id);
-    		   im.setDi_size(String.valueOf(imgsize[i]));
-    		   if (imageid == null || imageid.equals(""))
-    			   new ImageManageAction().saveImageManage(im);
-    		   else {
-    			   im.setDi_id(imageid);
-    			   new ImageManageAction().updateImageManage(im);
-    		   }
-    	   }
+//    	   if (returntype.equals("IMAGE")){
+//    		   ImageManage im = new ImageManage();
+//    		   im.setDi_filename(filename[i]);
+//    		   im.setDi_filedesc(imgdesc[i]);
+//    		   im.setDi_comment(imgcomt[i]);
+//    		   im.setDi_width(String.valueOf(imgwide[i]));
+//    		   im.setDi_height(String.valueOf(imghigh[i]));
+//    		   im.setDi_refid(String.valueOf(refid[i]));
+//    		   im.setDi_tgid(tg_id);
+//    		   im.setDi_tpid(tp_id);
+//    		   im.setDi_size(String.valueOf(imgsize[i]));
+//    		   if (imageid == null || imageid.equals(""))
+//    			   new ImageManageAction().saveImageManage(im);
+//    		   else {
+//    			   im.setDi_id(imageid);
+//    			   new ImageManageAction().updateImageManage(im);
+//    		   }
+//    	   }
     	 
     	   if (!(tp_id == null || tp_id.equals("null") || tp_id.equals(""))){
     		   imageFileName =(String)savemap.get("readpath") + imageFileName;
@@ -274,29 +273,30 @@ public class FileUploadAction extends ActionSupport  {
     	   }
     	   
        }
-	  }else if (di_filename != null){
-		   ImageManage im = new ImageManage();
-		   if (imgdesc == null)
-			   imgdesc = new String[0];
-		   im.setDi_filedesc(imgdesc[0]);
-		   if (imgcomt == null)
-			   imgcomt = new String[0];
-		   im.setDi_comment(imgcomt[0]);
-		   if (imgwide == null)
-			   imgwide = new String[0];
-		   im.setDi_width(String.valueOf(imgwide[0]));
-		   if (imghigh == null)
-			   imghigh = new String[0];
-		   im.setDi_height(String.valueOf(imghigh[0]));
-		   if (refid == null)
-			   refid = new String[0];
-		   im.setDi_refid(String.valueOf(refid[0]));
-		   im.setDi_tgid(tg_id);
-		   im.setDi_tpid(tp_id);
-		   im.setDi_id(imageid);
-		   im.setDi_filename(di_filename);
-		   new ImageManageAction().updateImageManage(im);
-       }
+	  }
+//       else if (di_filename != null){
+//		   ImageManage im = new ImageManage();
+//		   if (imgdesc == null)
+//			   imgdesc = new String[0];
+//		   im.setDi_filedesc(imgdesc[0]);
+//		   if (imgcomt == null)
+//			   imgcomt = new String[0];
+//		   im.setDi_comment(imgcomt[0]);
+//		   if (imgwide == null)
+//			   imgwide = new String[0];
+//		   im.setDi_width(String.valueOf(imgwide[0]));
+//		   if (imghigh == null)
+//			   imghigh = new String[0];
+//		   im.setDi_height(String.valueOf(imghigh[0]));
+//		   if (refid == null)
+//			   refid = new String[0];
+//		   im.setDi_refid(String.valueOf(refid[0]));
+//		   im.setDi_tgid(tg_id);
+//		   im.setDi_tpid(tp_id);
+//		   im.setDi_id(imageid);
+//		   im.setDi_filename(di_filename);
+//		   new ImageManageAction().updateImageManage(im);
+//       }
 	  
 	  String rt = "";
 	  if (returntype == null || returntype.equals(""))
