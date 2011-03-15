@@ -43,52 +43,6 @@
 	</bean>
 	<!-- questionnaire_db  end -->
 	
-	<bean id="dataSource"
-		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName">
-			<value>${JDBC.Driver}</value>
-		</property>
-		<property name="url">
-			<value>${JDBC.ConnectionURL}</value>
-		</property>
-		<property name="username">
-			<value>${JDBC.Username}</value>
-		</property>
-		<property name="password">
-			<value>${JDBC.Password}</value>
-		</property>
-	</bean>
-	
-	<bean id="dataSourceMst" 
-		class="com.mchange.v2.c3p0.ComboPooledDataSource"
-		destroy-method="close" >
-		<property name="driverClass">
-			<value>${JDBC.Driver}</value>
-		</property>
-		<property name="jdbcUrl">
-			<value>${JDBC.mstConnectionURL}</value>
-		</property>
-		<property name="user">
-			<value>${JDBC.mstUsername}</value>
-		</property>
-		<property name="password">
-			<value>${JDBC.mstPassword}</value>
-		</property>
-		<property name="autoCommitOnClose" value="true" />
-		<property name="checkoutTimeout"
-			value="${JDBC.checkoutTimeout}" />
-		<property name="initialPoolSize" value="${JDBC.minPoolSize}" />
-		<property name="minPoolSize" value="${JDBC.minPoolSize}" />
-		<property name="maxPoolSize" value="${JDBC.maxPoolSize}" />
-		<property name="maxIdleTime" value="${JDBC.maxIdleTime}" />
-		<property name="acquireIncrement"
-			value="${JDBC.acquireIncrement}" />
-		<property name="maxIdleTimeExcessConnections"
-			value="${JDBC.maxIdleTimeExcessConnections}" />
-		<property name="numHelperThreads" value="${JDBC.numHelperThreads}"/> 
-	</bean>
-	
-	
 	<!-- 加载数据配置  end-->
 	<import resource="conf/spring/beans-service.xml" />
 	<import resource="conf/spring/beans-dao.xml" />
