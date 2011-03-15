@@ -236,7 +236,7 @@ public class FileUploadAction extends ActionSupport  {
 	    		    		  System.out.println("不打水印");
 	    		    		 // new ImageBuilderTool().rebuildImage(path+imageFileName,path+imageFileName,1024,768,false,"","");
 	    		    	  }else {
-	    		    		  new ImageBuilderTool(). createPicMark(imageFile,getRequest().getRealPath("/images/logo.png"));
+	    		    		  new ImageBuilderTool(). createPicMark(imageFile,getRequest().getRealPath("/images/logo.gif"));
 	    		    		  System.out.println("打水印");
 	    		    	  }
 	    		   }
