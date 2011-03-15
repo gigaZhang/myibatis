@@ -3,5 +3,12 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
-	
+	<bean id="msthtmlcreatorService"
+		class="com.freemarker.service.impl.MstHtmlCreatorServiceImpl" autowire="byName">
+		<property name="baseDao" ref="msthtmlcreatorDao"/>
+	</bean>
+	<bean id="msthtmlelementService"
+		class="com.freemarker.service.impl.MstHtmlElementServiceImpl" autowire="byName">
+		<property name="baseDao" ref="msthtmlelementDao"/>
+	</bean>
 </beans>

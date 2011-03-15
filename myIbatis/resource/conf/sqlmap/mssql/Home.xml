@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+	"http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap>
+
+	<resultMap id="module" class="com.freemarker.entity.BHome"  >
+		<result property="module" column="mhc_module"/>
+	</resultMap>
+
+	<resultMap id="item" class="com.freemarker.entity.BHome"  >
+		<result property="mhcid" column="mhc_id"/>
+		<result property="mhcname" column="mhc_name"/>
+		<result property="url" column="mhc_url"/>
+		<result property="outpath" column="mhc_outpath"/>
+		<result property="inpath" column="mhc_inpath"/>
+		<result property="module" column="mhc_module"/>
+		<result property="stat" column="mhc_stat"/>
+	</resultMap>
+	
+	<resultMap id="initial" class="com.freemarker.entity.BHome"  >
+		<result property="piccounts" column="pic_counts"/>
+		<result property="txtcounts" column="txt_counts"/>
+		<result property="color" column="mhc_color"/>
+		<result property="keyword" column="mhc_keyword"/>
+		<result property="titsize" column="mhc_titsize"/>
+		<result property="descsize" column="mhc_descsize"/>
+		<result property="preview" column="mhc_preview"/>
+		<result property="published" column="mhc_published"/>
+		<result property="module" column="mhc_module"/>
+		<result property="mhcname" column="mhc_name"/>
+		<result property="mapno" column="mhc_mapno"/>
+		<result property="mhcurl" column="mhc_url"/>
+	</resultMap>
+	
+	<resultMap id="txt" class="com.freemarker.entity.BHome"  >
+		<result property="mheid" column="mhe_id"/>
+		<result property="title" column="mhe_desc"/>
+		<result property="url" column="mhe_url"/>
+		<result property="hot" column="mhe_hot"/>
+		<result property="key" column="mhe_key"/>
+		<result property="keyurl" column="mhe_keyurl"/>
+		<result property="tips" column="mhe_tips"/>
+		<result property="mhename" column="mhe_name"/>
+	</resultMap>
+	
+	<resultMap id="pic" class="com.freemarker.entity.BHome"  >
+		<result property="desc" column="mhe_desc"/>
+		<result property="filename" column="mhe_url"/>
+		<result property="key" column="mhe_key"/>
+		<result property="keyurl" column="mhe_keyurl"/>
+		<result property="mhename" column="mhe_name"/>
+	</resultMap>
+	
+	<resultMap id="path" class="com.freemarker.entity.BHome"  >
+		<result property="mhcname" column="mhc_name"/>
+		<result property="url" column="mhc_url"/>
+		<result property="outurl" column="mhc_outurl"/>
+		<result property="outpath" column="mhc_outpath"/>
+		<result property="inpath" column="mhc_inpath"/>
+		<result property="module" column="mhc_module"/>
+		<result property="stat" column="mhc_stat"/>
+		
+	</resultMap>
+	
+	<resultMap id="bbscmt" class="com.freemarker.entity.BHome"  >
+		<result property="comment" column="bcontent"/>
+		<result property="userid" column="r_userid"/>
+		<result property="bclass" column="r_bcclass"/>
+	</resultMap>
+	
+	<resultMap id="buscmt" class="com.freemarker.entity.BHome"  >
+		<result property="comment" column="pcomment"/>
+		<result property="userid" column="userid"/>
+		<result property="bclass" column="pid"/>
+	</resultMap>
+	
+	<resultMap id="hend" class="com.freemarker.entity.BHome"  >
+		<result property="username" column="dc_showname"/>
+		<result property="filename" column="dc_bbs_head"/>
+	</resultMap>
+	
+	<resultMap id="mhcid" class="com.freemarker.entity.BHome"  >
+		<result property="mhcid" column="mhc_id"/>
+	</resultMap>
+	
+	<resultMap id="mhcname" class="com.freemarker.entity.BHome"  >
+		<result property="mhcname" column="mhc_name"/>
+	</resultMap>
+	
+	<resultMap id="homeinfo" class="com.freemarker.entity.BHome"  >
+		<result property="mhcid" column="mhc_id"/>
+	</resultMap>
+	
+	<resultMap id="element" class="com.freemarker.entity.BHome"  >
+		<result property="mheid" column="mhe_id"/>
+		<result property="mhcid" column="mhc_id"/>
+		<result property="mhename" column="mhe_name"/>
+		<result property="title" column="mhe_desc"/>
+		<result property="url" column="mhe_url"/>
+		<result property="mapno" column="mhe_mapno"/>
+		<result property="key" column="mhe_key"/>
+		<result property="keyurl" column="mhe_keyurl"/>
+	</resultMap>
+	
+	<resultMap id="logid" class="com.freemarker.entity.BHome"  >
+		<result property="tlogid" column="logid"/>
+	</resultMap>
+	
+	<resultMap id="companytotal" class="com.freemarker.entity.BHome">
+		<result property="total" column="total"/>
+	</resultMap>
+	
+	
+	<select id="listBHome"  parameterClass="java.util.Map" resultMap="item">  
+		SELECT mhc_id,mhc_name,mhc_url,mhc_outpath,mhc_inpath,mhc_module,mhc_stat FROM MST_HTML_CREATOR where $search$
+	</select>
+	
+	<select id="getModule" parameterClass="java.util.Map" resultMap="module">  	
+		SELECT mhc_module FROM MST_HTML_CREATOR WHERE (mhc_module != '') and (mhc_module != '全站广告') and (mhc_module != '十大行业') and pub_status = 1 GROUP BY mhc_module order by mhc_module DESC
+	</select>
+	
+	<select id="getMhcId" parameterClass="java.util.Map" resultMap="mhcid">  	
+		SELECT top 1 mhc_id FROM MST_HTML_CREATOR WHERE mhc_name = #mhcname# and pub_status = 1
+	</select>
+	
+	<select id="getMhcName" parameterClass="java.util.Map" resultMap="mhcname">  	
+		SELECT top 1 mhc_name FROM MST_HTML_CREATOR WHERE mhc_id = #mhcid# and pub_status = 1
+	</select>
+	
+	<select id="getStationModule" parameterClass="java.util.Map" resultMap="module">  	
+		SELECT mhc_module FROM MST_HTML_CREATOR WHERE (mhc_module = '全站广告') and pub_status = 1 GROUP BY mhc_module order by mhc_module DESC
+	</select>
+	
+	<select id="allItem" parameterClass="java.util.Map" resultMap="item">
+		SELECT a.mhc_id,mhc_name,mhc_url,mhc_outpath,mhc_inpath,mhc_module,mhc_stat FROM MST_HTML_CREATOR a join MST_HTML_ELEMENT b on a.mhc_id = b.mhc_id WHERE $module$ and mhe_mapno = #mapno# and pub_status = 1 order by mhc_order ASC
+	</select>
+	
+	<select id="initialValue" parameterClass="java.util.Map" resultMap="initial">
+		SELECT top 1 pic_counts,txt_counts,mhc_color,mhc_keyword,mhc_titsize,mhc_descsize,mhc_preview,mhc_published,mhc_module,mhc_name,mhc_mapno,mhc_url FROM MST_HTML_CREATOR WHERE mhc_id = #item# and pub_status = 1
+	</select>
+	
+	<select id="txtInfo" parameterClass="java.util.Map" resultMap="txt">
+		SELECT mhe_id,mhe_desc,mhe_url,mhe_hot,mhe_key,mhe_keyurl,mhe_tips,mhe_name FROM MST_HTML_ELEMENT where mhc_id = #item# and mhe_mapno = #mapno#
+	</select>
+	
+	<select id="picInfo" parameterClass="java.util.Map" resultMap="pic">
+		SELECT top $piccounts$ mhe_url,mhe_desc,mhe_key,mhe_keyurl,mhe_name FROM MST_HTML_ELEMENT where mhc_id = #item# and mhe_mapno = #mapno# and (mhe_name LIKE 'p%') 
+	</select>
+	
+	<select id="txtList" parameterClass="java.util.Map" resultMap="txt">
+		SELECT mhe_id,mhe_desc,mhe_url,mhe_hot,mhe_key,mhe_keyurl,mhe_tips,mhe_name FROM MST_HTML_ELEMENT where mhc_id = #item# and mhe_mapno = #mapno# and (mhe_name LIKE 't%') 
+	</select>
+	
+	<select id="picList" parameterClass="java.util.Map" resultMap="pic">
+		SELECT mhe_desc,mhe_url,mhe_key,mhe_keyurl,mhe_name FROM MST_HTML_ELEMENT where mhc_id = #item# and mhe_mapno = #mapno# and (mhe_name LIKE 'p%') 
+	</select>
+	
+	<update id="setHot" parameterClass="com.freemarker.entity.BHome">
+		update MST_HTML_ELEMENT set mhe_hot = #hot# where mhc_id = #item# and mhe_mapno = #mapno# and mhe_name = 't$place$'
+	</update>
+	
+	<update id="setTxt" parameterClass="com.freemarker.entity.BHome">
+		update MST_HTML_ELEMENT set mhe_desc = #title#,mhe_url = #url#,mhe_key = #key#,mhe_keyurl = #keyurl# where mhc_id = #item# and mhe_mapno = #mapno# and mhe_name = 't$place$'
+	</update>
+	
+	<update id="setPic" parameterClass="com.freemarker.entity.BHome">
+		update MST_HTML_ELEMENT set mhe_desc = #desc#,mhe_url = #filename#,mhe_key = #key#,mhe_keyurl = #keyurl# where mhc_id = #item# and mhe_mapno = #mapno# and  mhe_name = 'p$place$'
+	</update>
+	
+	<insert id="setLog" parameterClass="com.freemarker.entity.BHome">  
+		insert MST_HTML_LOG (r_mhcname,place,r_mhetitle,r_mhedesc,r_mheurl,r_mhefile,r_mhekey,r_mhekeyurl,mapno,editorname,editordate) values (#item#,#place#,#title#,#desc#,#url#,#filename#,#key#,#keyurl#,#mapno#,#username#,getDate())
+	</insert>
+	
+	<select id="recommandPath" parameterClass="java.util.Map" resultMap="path">
+		SELECT top 1 mhc_name,mhc_url,mhc_outurl,mhc_outpath,mhc_inpath,mhc_module,mhc_stat FROM MST_HTML_CREATOR WHERE mhc_id = #item#
+	</select>
+	
+	<select id="bbsComment" parameterClass="java.util.Map" resultMap="bbscmt">
+		select top 1 bcontent,r_userid,r_bcclass FROM BBS_MAIN_$mapno$ join BBS_MAIN_CONT_$mapno$ on bmid=r_bmid where r_bmid = #bmid#
+	</select>
+	
+	<select id="busComment" parameterClass="java.util.Map" resultMap="buscmt">
+		SELECT top 1 pcomment,userid,pid FROM MST_COMMENT where gcid = #gcid#
+	</select>
+	
+	<select id="userhend" parameterClass="java.util.Map" resultMap="hend">
+		SELECT top 1 dc_showname, dc_bbs_head FROM DC_MEMBER WHERE (dc_userid = #userid#)
+	</select>
+	
+	<select id="getHomeInfo" parameterClass="java.util.Map" resultMap="homeinfo">
+		SELECT mhc_id FROM MST_HTML_CREATOR WHERE mhc_name = #mhcname# and mhc_module = '新版首页' and pub_status = 1
+	</select>
+	
+	<select id="getElement" parameterClass="java.util.Map" resultMap="element">
+		SELECT mhe_id,mhc_id,mhe_name,mhe_desc,mhe_url,mhe_mapno,mhe_key,mhe_keyurl FROM MST_HTML_ELEMENT WHERE mhc_id = #item# and mhe_mapno = #mapno# and mhe_name in ($logid$) 
+	</select>
+	
+	<insert id="setDirectory" parameterClass="com.freemarker.entity.BHome">  
+		insert MST_EDITOR_DIRECTORY (mhcId,mheId,mheName,med_title,med_url,med_key,med_keyurl,med_desc,med_imgurl,med_notes,med_channel,med_prof,med_ctime,mapno,editorid,editorname,med_status) values (#mhcid#,#mheid#,#mhename#,#title#,#url#,#key#,#keyurl#,#desc#,#filename#,#notes#,#channel#,#prof#,#time#,#mapno#,#userid#,#username#,#status#) 
+	</insert>
+	
+	<select id="getDirectory" parameterClass="java.util.Map" resultMap="logid">
+		SELECT top 1 logid FROM MST_EDITOR_DIRECTORY where mheId = #mheid# and med_status = 0
+	</select>
+	
+	<update id="setDirectoryStatus" parameterClass="java.util.Map">
+		update MST_EDITOR_DIRECTORY set med_status = 1 where logid = #tlogid#
+	</update>
+	
+	<insert id="initElementByFName" parameterClass="com.freemarker.entity.BHome">  
+		insert MST_HTML_ELEMENT (mhc_id,mhe_name,mhe_desc,mhe_url,mhe_mapno,mhe_key) values (#mhcid#,#mhename#,#desc#,#url#,#mapno#,#key#)
+	</insert>
+	
+	<update id="upElementByFName" parameterClass="com.freemarker.entity.BHome">
+		update MST_HTML_ELEMENT set mhe_desc = #desc#,mhe_url = #url#  where mhe_id = #mheid#
+	</update>
+	
+	<select id="getCompanyList"  parameterClass="java.util.Map" resultMap="item">  
+			mst_sp_pageshow 'mhc_id,mhc_name', '', 'mhc_module = ''装修日记''', 'mhc_id', 'mhc_id DESC', 30, $page$
+	</select>
+	
+	<select id="companyTotal"  parameterClass="java.util.Map" resultMap="companytotal">  
+			SELECT COUNT(*) AS total FROM MST_HTML_CREATOR WHERE mhc_module = '装修日记'
+	</select>
+	
+	<insert id="addCompany" parameterClass="com.freemarker.entity.BHome">  
+		insert  (mhc_name,mhc_url,mhc_mapno,mhc_module,mhc_outpath,mhc_inpath) values (#mhcname#,#mhcurl#,#mapno#,#module#,#outpath#,#inpath#)
+	</insert>
+	
+	<delete id="delCompany" parameterClass="java.util.Map">
+		delete MST_HTML_CREATOR where mhc_id = #mhcid#
+	</delete>
+	
+</sqlMap>
