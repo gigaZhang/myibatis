@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+	"http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap>
+
+	<insert id="insertMstHtmlCreator" parameterClass="com.freemarker.entity.MstHtmlCreator">  
+		insert into MST_HTML_CREATOR(mhc_name,mhc_url,mhc_outurl,pic_counts,txt_counts,mhc_mapno,pub_status,mhc_module,mhc_color,mhc_keyword,mhc_titsize,mhc_descsize,mhc_preview,mhc_published,mhc_outpath,mhc_inpath,mhc_order,mhc_stat) values (#mhc_name#,#mhc_url#,#mhc_outurl#,#pic_counts#,#txt_counts#,21,1,#mhc_module#,#mhc_color#,#mhc_keyword#,#mhc_titsize#,#mhc_descsize#,#mhc_preview#,#mhc_published#,#mhc_outpath#,#mhc_inpath#,#mhc_order#,#mhc_stat#)
+	</insert>
+
+	<select id="getMstHtmlCreator"  parameterClass="java.util.Map" resultClass="com.freemarker.entity.MstHtmlCreator">  
+		SELECT top 1 $rows$ FROM MST_HTML_CREATOR where pub_status = 1 and  $search$ 
+	</select>
+	
+	<select id="listModule"  parameterClass="java.util.Map" resultClass="com.freemarker.entity.MstHtmlCreator">  
+		SELECT mhc_module FROM MST_HTML_CREATOR where (mhc_module != '' and pub_status = 1)  GROUP BY mhc_module order by mhc_module DESC
+	</select>
+	
+	<select id="listMstHtmlCreator"  parameterClass="java.util.Map" resultClass="com.freemarker.entity.MstHtmlCreator">  
+		SELECT $top$ $rows$ FROM MST_HTML_CREATOR $join$ where pub_status = 1 and $search$ 
+	</select>
+	
+	<select id="listSplitMstHtmlCreator"  parameterClass="java.util.Map" resultClass="com.freemarker.entity.MstHtmlCreator">  
+		mst_sp_pageshow '$rows$', 'MST_HTML_CREATOR $join$', '$search$', 'mhc_id', 'mhc_id DESC', 30, $page$
+	</select>
+	
+	<update id="updateMstHtmlCreator" parameterClass="com.freemarker.entity.MstHtmlCreator">
+		update MST_HTML_CREATOR
+		<dynamic prepend="SET">
+			<isNotEmpty prepend="," property="mhc_name">mhc_name = #mhc_name# </isNotEmpty>
+			<isNotEmpty prepend="," property="mhc_url">mhc_url = #mhc_url# </isNotEmpty>
+			<isNotEmpty prepend="," property="mhc_outurl">mhc_outurl = #mhc_outurl# </isNotEmpty>
+			<isNotEmpty prepend="," property="pic_counts">pic_counts = #pic_counts# </isNotEmpty>
+			<isNotEmpty prepend="," property="txt_counts">txt_counts = #txt_counts# </isNotEmpty>
+			<isNotEmpty prepend="," property="mhc_mapno">mhc_mapno = #mhc_mapno# </isNotEmpty>
+			<isNotEmpty prepend="," property="mhc_module">mhc_module = #mhc_module# </isNotEmpty>
+			<isNotEmpty prepend="," property="mhc_color">mhc_color = #mhc_color# </isNotEmpty>
+			<isNotEmpty prepend="," property="mhc_keyword">mhc_keyword = #mhc_keyword# </isNotEmpty>
+			<isNotEmpty prepend="," property="mhc_titsize">mhc_titsize = #mhc_titsize# </isNotEmpty>
+			<isNotEmpty prepend="," property="mhc_descsize">mhc_descsize = #mhc_descsize# </isNotEmpty>
+			<isNotEmpty prepend="," property="mhc_preview">mhc_preview = #mhc_preview# </isNotEmpty>
+			<isNotEmpty prepend="," property="mhc_published">mhc_published = #mhc_published# </isNotEmpty>
+			<isNotEmpty prepend="," property="mhc_outpath">mhc_outpath = #mhc_outpath# </isNotEmpty>
+			<isNotEmpty prepend="," property="mhc_inpath">mhc_inpath = #mhc_inpath# </isNotEmpty>
+			<isNotEmpty prepend="," property="mhc_order">mhc_order = #mhc_order# </isNotEmpty>
+			<isNotEmpty prepend="," property="mhc_stat">mhc_stat = #mhc_stat# </isNotEmpty>
+		</dynamic>
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and " property="mhc_id">mhc_id = #mhc_id# </isNotEmpty>
+		 </dynamic>
+	</update>
+
+	<select id="getMstHtmlCreatorCount"  parameterClass="java.util.Map" resultClass="java.lang.Integer">  
+		SELECT COUNT(*) FROM MST_HTML_CREATOR $join$ where $search2$
+	</select>
+
+	<update id="deleteGroupMstHtmlCreator" parameterClass="java.util.Map">
+		update MST_HTML_CREATOR set pub_status = 0 where $search$
+	</update>	
+</sqlMap>

@@ -22,5 +22,23 @@
 		<property name="dataSource" ref="questionnaire_db" />
 	</bean>
 	<!-- lph  questionnaire  end -->
+	<bean id="homeDao" class="com.freemarker.dao.impl.HomeDaoImpl" autowire="byName" >
+	</bean>
+	<bean id="directoryDao" class="com.freemarker.dao.impl.DirectoryDaoImpl" autowire="byName" >
+		<property name="dataSource" ref="dataSourceMst" />
+	</bean>
+	<bean id="msthtmlcreatorDao" class="com.freemarker.dao.impl.MstHtmlCreatorDaoImpl" autowire="byName">
+	</bean>
+	<bean id="msthtmlelementDao" class="com.freemarker.dao.impl.MstHtmlElementDaoImpl" autowire="byName">
+	</bean>
 	
+	<bean id="imagemanageDao" class="com.freemarker.dao.impl.ImageManageDaoImpl" autowire="byName">
+		<property name="dataSource" ref="dataSourceImage" />
+	</bean>
+	<bean id="imagetypeDao" class="com.freemarker.dao.impl.ImageTypeDaoImpl" autowire="byName">
+		<property name="dataSource" ref="dataSourceImage" />
+	</bean>
+	<bean id="imagegroupDao" class="com.freemarker.dao.impl.ImageGroupDaoImpl" autowire="byName">
+		<property name="dataSource" ref="dataSourceImage" />
+	</bean>
 </beans>

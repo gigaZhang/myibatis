@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+	"http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap>
+
+	<insert id="insertMstHtmlElement" parameterClass="com.freemarker.entity.MstHtmlElement">  
+		insert into MST_HTML_ELEMENT(mhc_id,mhe_name,mhe_desc,mhe_url,mhe_mapno,mhe_hot,mhe_key,mhe_keyurl,mhe_tips,mhe_order) values (#mhc_id#,#mhe_name#,#mhe_desc#,#mhe_url#,#mhe_mapno#,#mhe_hot#,#mhe_key#,#mhe_keyurl#,#mhe_tips#,#mhe_order#)
+	</insert>
+
+	<select id="getMstHtmlElement"  parameterClass="java.util.Map" resultClass="com.freemarker.entity.MstHtmlElement">  
+		SELECT top 1 $rows$ FROM MST_HTML_ELEMENT where $search$
+	</select>
+	
+	<select id="listMstHtmlElement"  parameterClass="java.util.Map" resultClass="com.freemarker.entity.MstHtmlElement">  
+		SELECT $top$ $rows$ FROM MST_HTML_ELEMENT $join$ where $search$
+	</select>
+	
+	<select id="listSplitMstHtmlElement"  parameterClass="java.util.Map" resultClass="com.freemarker.entity.MstHtmlElement">  
+		mst_sp_pageshow '$rows$', 'MST_HTML_ELEMENT $join$', '$search$', 'mhe_id', 'mhe_id DESC', 30, $page$
+	</select>
+	
+	<update id="updateMstHtmlElement" parameterClass="com.freemarker.entity.MstHtmlElement">
+		update MST_HTML_ELEMENT
+		<dynamic prepend="SET">
+			<isNotEmpty prepend="," property="mhc_id">mhc_id = #mhc_id# </isNotEmpty>
+			<isNotEmpty prepend="," property="mhe_name">mhe_name = #mhe_name# </isNotEmpty>
+			<isNotEmpty prepend="," property="mhe_desc">mhe_desc = #mhe_desc# </isNotEmpty>
+			<isNotEmpty prepend="," property="mhe_url">mhe_url = #mhe_url# </isNotEmpty>
+			<isNotEmpty prepend="," property="mhe_mapno">mhe_mapno = #mhe_mapno# </isNotEmpty>
+			<isNotEmpty prepend="," property="mhe_hot">mhe_hot = #mhe_hot# </isNotEmpty>
+			<isNotEmpty prepend="," property="mhe_key">mhe_key = #mhe_key# </isNotEmpty>
+			<isNotEmpty prepend="," property="mhe_keyurl">mhe_keyurl = #mhe_keyurl# </isNotEmpty>
+			<isNotEmpty prepend="," property="mhe_tips">mhe_tips = #mhe_tips# </isNotEmpty>
+			<isNotEmpty prepend="," property="mhe_order">mhe_order = #mhe_order# </isNotEmpty>
+		</dynamic>
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and " property="mhc_id">mhc_id = #mhc_id# </isNotEmpty>
+		 	<isNotEmpty prepend="and " property="mhe_mapno">mhe_mapno = #mhe_mapno# </isNotEmpty>
+		 	<isNotEmpty prepend="and " property="mhe_name">mhe_name = #mhe_name# </isNotEmpty>
+		 	<isNotEmpty prepend="and " property="mhe_id">mhe_id = #mhe_id# </isNotEmpty>
+		 </dynamic>
+	</update>
+
+	<select id="getMstHtmlElementCount"  parameterClass="java.util.Map" resultClass="java.lang.Integer">  
+		SELECT COUNT(*) FROM MST_HTML_ELEMENT $join$ where $search2$
+	</select>
+
+	<delete id="deleteGroupMstHtmlElement" parameterClass="java.util.Map">
+		delete  MST_HTML_ELEMENT where $search$
+	</delete>	
+</sqlMap>
