@@ -21,8 +21,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  <div style="font-size:30px;color:red;">制作播放器</div>
-  <div>
+  <!-- <div style="font-size:30px;color:red;">制作播放器</div>-->
+  <!-- <div>
     <object id="mPlayer1" width=300 height=300 classid="CLSID:6BF52A52-394A-11D3-B153-00C04F79FAA6">
 		<param name="URL" value="f://b77c0be49f226269_2.wma">
         <param name="rate" value="1"><!-- 速率 -->
@@ -50,7 +50,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <param name="_cx" value="7779">
         <param name="_cy" value="1693">
       </object>
-     </div>
-     <jsp:forward page="/indagateAction!getIndagateList.action"></jsp:forward>
+     </div>  -->
+     
+     <div><a href="indagateAction!getIndagateList.action">问卷调查</a></div>
+     <div><a href="proj/test/test_json.jsp">json</a></div>
+     <div><a href="proj/system/htmlblock_manage.jsp">自动推送后台</div>
+     <div><a href="proj/system/living_girl.jsp">优活女人</div>
+     
+     <div></div>
+     
   </body>
 </html>
