@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>发布/编辑贴子</title>
+<script language="javascript" type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="FCKeditor/fckeditor.js"></script>
+</head>
+<body>
+<div>描述:<textarea cols = "50" rows = "10" id="textdis" width="600px" height="400px" class="fabu_text8" name="discntContent" value=""></textarea>
+    							<script>
+							 var oFCKeditor = new FCKeditor('discntContent') ;
+							 oFCKeditor.BasePath = 'FCKeditor/' ;
+							 oFCKeditor.ToolbarSet = 'c1' ;
+							 //oFCKeditor.ToolbarSet = 'Default' ;//Basic
+							 oFCKeditor.Width = '600' ;
+							 oFCKeditor.Height = '400' ;
+							 oFCKeditor.Value = '' ;
+							 oFCKeditor.ReplaceTextarea() ;
+							 //document.getElementById("btnShow").disabled = 'true';
+							 //document.getElementById("btnShow").style.display = 'none';
+							</script>
+	</div>
+	<input type="button" value="输出输入的数据" onclick="check()"/>
+
+	<script>
+		function check(){
+			var oEditor = FCKeditorAPI.GetInstance("discntContent");
+			alert(oEditor.GetXHTML(true));
+		}
+	</script>
+	<BR><br><br>
+	日历控件：
+	<div>
+	<input readonly type="text" onfocus="WdatePicker();"/>
+</div>
+	
+</body>
