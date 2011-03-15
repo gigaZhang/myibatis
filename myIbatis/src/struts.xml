@@ -26,6 +26,8 @@
 			<result name="Indagate_Detail_page">/proj/questionnaire/show_indagateResult.jsp</result>
     		
     	</action>
+    	
+    	
     </package>
      <package name="com.cron" extends="struts-default">
     	<!-- test action -->
@@ -33,4 +35,19 @@
      </package>
     <!-- lph action end -->
     
+    <!-- 自动推送action -->
+     <package name="com.freemarker.action" extends="struts-default">
+    	<action name ="home" class ="com.freemarker.action.HomeAction"> 
+            <result name ="HOME">/proj/system/home.jsp</result> 
+            <result name ="LIVING_GIRL">/proj/system/living_girl.jsp</result>  
+        </action> 
+          <action name="htmlblock" class="com.freemarker.action.HtmlBlockAction">
+        	<result name ="HTMLBLOCK">/proj/system/htmlblock_manage.jsp</result> 
+       </action>
+        <action name ="fileUpload" class ="com.freemarker.action.FileUploadAction"> 
+            <result name ="success">/proj/upload/FileUpload.jsp</result>
+        </action> 
+     </package>
+     
+        
     </struts>
