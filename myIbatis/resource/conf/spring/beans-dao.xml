@@ -23,10 +23,13 @@
 	</bean>
 	<!-- lph  questionnaire  end -->
 	<bean id="homeDao" class="com.freemarker.dao.impl.HomeDaoImpl" autowire="byName" >
+		<property name="dataSource" ref="questionnaire_db" />
 	</bean>
 	<bean id="msthtmlcreatorDao" class="com.freemarker.dao.impl.MstHtmlCreatorDaoImpl" autowire="byName">
+		<property name="dataSource" ref="questionnaire_db" />
 	</bean>
 	<bean id="msthtmlelementDao" class="com.freemarker.dao.impl.MstHtmlElementDaoImpl" autowire="byName">
+		<property name="dataSource" ref="questionnaire_db" />
 	</bean>
 	
 	
