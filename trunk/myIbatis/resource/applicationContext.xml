@@ -89,22 +89,6 @@
 	</bean>
 	
 	
-	<bean id="dataSourceImage"
-		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName">
-			<value>${JDBC.Driver}</value>
-		</property>
-		<property name="url">
-			<value>${JDBC.imageConnectionURL}</value>
-		</property>
-		<property name="username">
-			<value>${JDBC.imageUsername}</value>
-		</property>
-		<property name="password">
-			<value>${JDBC.imagelPassword}</value>
-		</property>
-	</bean>	
-	
 	<!-- 加载数据配置  end-->
 	<import resource="conf/spring/beans-service.xml" />
 	<import resource="conf/spring/beans-dao.xml" />
