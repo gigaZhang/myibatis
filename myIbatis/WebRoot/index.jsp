@@ -56,6 +56,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      <div><a href="proj/test/test_json.jsp">json</a></div>
      <div><a href="proj/system/htmlblock_manage.jsp">自动推送后台</div>
      <div><a href="proj/system/living_girl.jsp">优活女人</div>
+     <div><a href="test.html">日历/编辑器</div>
      
      <div></div>
      
