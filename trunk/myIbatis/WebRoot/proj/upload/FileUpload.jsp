@@ -65,9 +65,7 @@
 		 </script>
 		 <%} %>
 	    <script>
-	    	
 	   		 parent.getFileName("${fileName}","${desc}","${editor}");
-	   		 
 	    </script>
 	    
 	   
