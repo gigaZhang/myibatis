@@ -15,25 +15,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.framework.tool.Constants;
+
 import jcx.util.datetime;
 
 import com.framework.tool.BeanLocator;
-import com.freemarker.dao.DirectoryDao;
-import com.freemarker.dao.DiscouponDao;
 import com.freemarker.dao.HomeDao;
-import com.freemarker.dao.HtmlRightDao;
-import com.freemarker.dao.MainDao;
-import com.freemarker.entity.BDirectory;
 import com.freemarker.entity.BHome;
-import com.freemarker.entity.BMain;
-import com.freemarker.entity.BUser;
-import com.freemarker.entity.HtmlRight;
+
 import com.freemarker.tool.Freemarker;
 import com.freemarker.tool.MST_GUtil;
 import com.freemarker.tool.MST_StringUtil;
 import com.questionnaire.action.BaseAction;
-import com.sun.corba.se.impl.orbutil.closure.Constant;
 
 
 
@@ -47,7 +39,7 @@ public class HomeAction extends BaseAction{
 	private List<BHome> items;
 	private List<BHome> places;
 	HomeDao homedao = (HomeDao) BeanLocator.getBean("homeDao");
-	DirectoryDao directorydao = (DirectoryDao)BeanLocator.getBean("directoryDao");
+	//DirectoryDao directorydao = (DirectoryDao)BeanLocator.getBean("directoryDao");
 //	DiscouponDao discoupoDao = (DiscouponDao)BeanLocator.getBean("discouponDao");
 //	HtmlRightDao htmlrightDao = (HtmlRightDao) BeanLocator.getBean("htmlrightDao");
 //	MainDao maindao = (MainDao) BeanLocator.getBean("mainDao");
@@ -144,10 +136,7 @@ public class HomeAction extends BaseAction{
 		}
 		if (home.getReturntype().equals("HOME"))
 			modulelist = (List)homedao.getModule();
-		BUser bu = (BUser)getSession().getAttribute("SESSION_USER");
-		System.out.println(home.getModule()+"============="+home.getMapno());
 		items = (List)homedao.allItem("mhc_module = '"+home.getModule()+"' and b.mhe_name = 't1'",home.getMapno());
-		System.out.println(items.size()+"=======================");
 		return submitQuery();
 	}
 
@@ -767,27 +756,27 @@ public class HomeAction extends BaseAction{
 	
 
 	
-	public String homeEditor(){
-		List adirectorylist = directorydao.getDirectoryeList("logid = "+home.getLogid()+"","med_ctime","0");
-		if (adirectorylist != null){
-			BDirectory b = (BDirectory)adirectorylist.get(0);
-			home.setTitle(b.getTitle());
-			home.setUrl(b.getUrl());
-			home.setFilename(b.getImgurl());
-			home.setDesc(b.getDesc());
-			home.setKey(b.getKey());
-			home.setKeyurl(b.getKeyurl());
-			home.setItem(Integer.parseInt(b.getMhcid()));
-			home.setPlace(Integer.parseInt(b.getMhename().replaceAll("p","").replaceAll("t","")));
-			//System.out.println("fdkflsdjk"+b.getMhcid());
-			if (home.getReturntype().equals("HOME"))
-				home.setModule("ÐÂ°æÊ×Ò³");
-			else if (home.getReturntype().equals("DDSH"))
-				home.setModule("ÐÂ°æ¶¢¶¢");
-			
-		}
-		return moduleMenu();
-	}
+//	public String homeEditor(){
+//		List adirectorylist = directorydao.getDirectoryeList("logid = "+home.getLogid()+"","med_ctime","0");
+//		if (adirectorylist != null){
+//			BDirectory b = (BDirectory)adirectorylist.get(0);
+//			home.setTitle(b.getTitle());
+//			home.setUrl(b.getUrl());
+//			home.setFilename(b.getImgurl());
+//			home.setDesc(b.getDesc());
+//			home.setKey(b.getKey());
+//			home.setKeyurl(b.getKeyurl());
+//			home.setItem(Integer.parseInt(b.getMhcid()));
+//			home.setPlace(Integer.parseInt(b.getMhename().replaceAll("p","").replaceAll("t","")));
+//			//System.out.println("fdkflsdjk"+b.getMhcid());
+//			if (home.getReturntype().equals("HOME"))
+//				home.setModule("ÐÂ°æÊ×Ò³");
+//			else if (home.getReturntype().equals("DDSH"))
+//				home.setModule("ÐÂ°æ¶¢¶¢");
+//			
+//		}
+//		return moduleMenu();
+//	}
 	
 	public static String download(String link,String code){
 		
