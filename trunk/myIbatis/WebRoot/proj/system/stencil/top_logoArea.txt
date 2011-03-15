@@ -1,0 +1,4 @@
+		  <ul class="logoArea">
+            <li class="lady_logo"><a style="cursor:pointer" target="_blank" href="http://lady.ddmap.com/"><img width="224" height="120" alt="优活女人" src="images/1299238051902.jpg"></a></li>
+            <li class="hd_adv"><a href="&tu1&" target="_blank"><img src="&pu1&" width="650" height="90" alt="&alt1&"/></a></li>
+          </ul>
