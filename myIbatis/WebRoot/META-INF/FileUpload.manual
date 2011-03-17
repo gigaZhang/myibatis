@@ -1,0 +1,10 @@
+<iframe src="/myIbatis/proj/upload/FileUpload.jsp?imgtype=discntsmallimgpath&createmark=true&imgsize=1&editor=cityThumbs.image" width="600px" height="60px">
+</iframe>
+
+imgtype=discntsmallimgpath:上传的路径，在使用该控件前需要确认session中存入了discntsmallimgpath的属性和值
+imgsize=1:出现几个上传框，改空间支持批量上传，需要修改该属性
+editor=cityThumbs.image:该属性是指上传成功后返回的地址输入在哪个地方，需要在js中添加判断
+				if('cityThumbs.image' == edit){
+					var files = file.split(",");
+					document.disInfoForm["cityThumbs.image"].value = files[0];
+				}

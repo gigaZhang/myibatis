@@ -1,0 +1,76 @@
+FCKeditor toolbarset的设置(2009-08-18 09:23:33)
+  
+FCKeditor toolbarset的设置。
+FCKeitor默认提供了两种方式　Default,Basic.
+而他的配置文件fckconfig.js里的代码是这样的
+FCKConfig.ToolbarSets["Default"] = [
+    ['Source','DocProps','-','Save','NewPage','Preview','-','Templates'],
+    ['Cut','Copy','Paste','PasteText','PasteWord','-','Print','SpellCheck'],
+    ['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
+    ['Form','Checkbox','Radio','TextField','Textarea','Select','Button','ImageButton','HiddenField'],
+    '/',
+    ['Bold','Italic','Underline','StrikeThrough','-','Subscript','Superscript'],
+    ['OrderedList','UnorderedList','-','Outdent','Indent','Blockquote'],
+    ['JustifyLeft','JustifyCenter','JustifyRight','JustifyFull'],
+    ['Link','Unlink','Anchor'],
+    ['Image','Flash','Table','Rule','Smiley','SpecialChar','PageBreak'],
+    '/',
+    ['Style','FontFormat','FontName','FontSize'],
+    ['TextColor','BGColor'],
+    ['FitWindow','ShowBlocks','-','About']        // No comma for the last row.
+] ;
+
+FCKConfig.ToolbarSets["Basic"] = [
+    ['Bold','Italic','-','OrderedList','UnorderedList','-','Link','Unlink','-','About']
+] ;
+从代码中不难看出我们可以自己手动修改要显示的内容。
+我们可以把最常用的放在一起，去掉那些不常用的。我们可以有两种方法修改。
+１.直接在原来的基础上增加或删除
+例如我们可以在Basic里添加 ['Style','FontFormat','FontName','FontSize'],
+FCKConfig.ToolbarSets["Basic"] = [
+    ['Bold','Italic','-','OrderedList','UnorderedList','-','Link','Unlink','-','About'] ，
+['Style','FontFormat','FontName','FontSize']
+]
+这样在使用时就显示样式，字体，字体大小等。
+２.新建一个自己的类型。
+FCKConfig.ToolbarSets["My"] = [
+    ['Bold','Italic','-','OrderedList','UnorderedList','-','Link','Unlink','-','Image','Flash','Table','Rule','Smiley']
+] ;
+这样你在fckeditor的属性toolbarset里设成My就可以使用了。
+
+ 
+
+所以你可以自己设置自己喜欢的工具栏。
+
+附：仿百度空间工具栏
+
+要仿照(关键在于看看fck的可变性)这样一个比较简洁的功能界面 可以做如下改变
+
+基础的改变是fckconfig.js和editor/fckeditor.html文件
+
+可以新建两个工具界面配置
+
+FCKConfig.ToolbarSets["Mybasic"] = [
+['Bold','Italic','-','Link','Unlink','Image','-','FontSize','TextColor','-']
+] ;
+FCKConfig.ToolbarSets["Myall"] = [
+['Bold','Italic','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyFull','-','Link','Unlink','Image','-','FontName','FontSize','TextColor','BGColor','-']
+] ;
+
+然后在fckeditor.html中script中加入
+
+function chang(ToobarStyle){
+
+var a = document.getElementByIdx("sptool");
+var b = document.getElementByIdx("alltool");
+if(ToobarStyle == 'Mybasic'){
+   ToobarStyle = 'Mybasic';
+   a.style.display = "none";
+   b.style.display = "inline";
+}else{
+   ToobarStyle = 'Myall';
+   a.style.display = "inline";
+   b.style.display = "none";
+}
+FCK.ToolbarSet.Load(ToobarStyle || 'Mybasic');
+}
