@@ -7,11 +7,12 @@
 <script type="text/javascript" src="FCKeditor/fckeditor.js"></script>
 </head>
 <body>
+<form action="" name="disInfoForm" method="post">
 <div>描述:<textarea cols = "50" rows = "10" id="textdis" width="600px" height="400px" class="fabu_text8" name="discntContent" value=""></textarea>
     							<script>
 							 var oFCKeditor = new FCKeditor('discntContent') ;
 							 oFCKeditor.BasePath = 'FCKeditor/' ;
-							 oFCKeditor.ToolbarSet = 'c1' ;
+							 oFCKeditor.ToolbarSet = 'Basic' ;
 							 //oFCKeditor.ToolbarSet = 'Default' ;//Basic
 							 oFCKeditor.Width = '600' ;
 							 oFCKeditor.Height = '400' ;
@@ -21,18 +22,64 @@
 							 //document.getElementById("btnShow").style.display = 'none';
 							</script>
 	</div>
-	<input type="button" value="输出输入的数据" onclick="check()"/>
-
-	<script>
-		function check(){
-			var oEditor = FCKeditorAPI.GetInstance("discntContent");
-			alert(oEditor.GetXHTML(true));
-		}
-	</script>
-	<BR><br><br>
+	<BR><b>大图:</b><input  name="discntInfo.dis_showpic" size="50"></input><font size="2%"></font><input type="checkbox" name="imgtype">
+				<Br><iframe src="/myIbatis/proj/upload/FileUpload.jsp?imgtype=discntimgpath&createmark=true&imgsize=1" width="600px" height="60px">
+				</iframe>
+	<br><input type="button" value="输出输入的数据" onclick="check()"/>
+	<Br><b>缩略图:</b><input name="cityThumbs.image"  size="50"></input><font size="2%"></font>
+				<br><iframe src="/myIbatis/proj/upload/FileUpload.jsp?imgtype=discntsmallimgpath&createmark=true&imgsize=1&editor=cityThumbs.image" width="600px" height="60px">
+				</iframe>
+	<Br><br><bR>
 	日历控件：
 	<div>
 	<input readonly type="text" onfocus="WdatePicker();"/>
 </div>
-	
+	</form>
 </body>
+<script>
+		function check(){
+			var oEditor = FCKeditorAPI.GetInstance("discntContent");
+			alert(oEditor.GetXHTML(true));
+		}
+		
+		function getFileName(file,desc,edit){
+		if (file != ''){
+			if (disInfoForm.imgtype.checked == false){
+				var files = file.split(",");
+				var descs = desc.split(",");
+				var img = "";
+				for (i=0;i<files.length;i++){
+					if (descs[i] == ''){
+						descs[i] = "";
+					}
+					img += '<img src="http://timg.ddmapimg.com/topic/'+files[i]+'" alt="'+descs[i]+'" /></br></br>';
+
+				}
+				img = getContent('discntContent') + img 
+				setContent('discntContent',img);
+			}else{
+				if('cityThumbs.image' == edit){
+					var files = file.split(",");
+					document.disInfoForm["cityThumbs.image"].value = files[0];
+				}else{
+					var files = file.split(",");
+					document.disInfoForm["discntInfo.dis_showpic"].value = files[0];
+				}
+			}	
+		}
+	//alert(topicform.img.value);
+	//ddtopicform.check.checked = false;
+}
+
+function getContent(type){
+	var oEditor = FCKeditorAPI.GetInstance(type);
+	return oEditor.GetXHTML(true);
+}
+
+function setContent(type,content){
+	 var oEditor = FCKeditorAPI.GetInstance(type);//
+	oEditor.SetHTML(content);//设置编辑器内容
+	
+}
+
+	</script>
