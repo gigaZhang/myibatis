@@ -6,6 +6,5 @@
 	<sqlMap resource="conf/sqlmap/mssql/Home.xml"/>
 	<sqlMap resource="conf/sqlmap/mssql/MstHtmlCreator.xml"/>
 	<sqlMap resource="conf/sqlmap/mssql/MstHtmlElement.xml"/>
-	
 	<!-- lph questionnaire end -->
 </sqlMapConfig>
