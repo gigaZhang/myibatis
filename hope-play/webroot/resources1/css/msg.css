@@ -1,0 +1,60 @@
+
+.msg .error, .msg .stop, .msg .alert, .msg .attention, .msg .tips, .msg .ok, .msg .notice, .msg .question, .msg .help, .msg .small-help {
+background:url("../images/msg_bg.png") no-repeat scroll 0 0 transparent;
+border:1px solid #DDDDDD;
+color:#404040;
+float:left;
+line-height:18px;
+padding:2px 10px 2px 23px;
+margin-left: 20px;
+}
+.msg  .error {
+background-color:#FFF2F2;
+background-position:3px 3px;
+border-color:#FF8080;
+}
+.msg .stop {
+background-color:#FFF2F2;
+background-position:3px -47px;
+border-color:#FF8080;
+}
+.msg .alert {
+background-color:#FFF5F6;
+background-position:3px -97px;
+border-color:#FF8C40;
+}
+.msg .attention {
+background-color:#E5F5FF;
+background-position:3px -147px;
+border-color:#40B3FF;
+}
+.msg .tips {
+background-color:#FFFFE5;
+background-position:3px -197px;
+border-color:#FFCC7F;
+}
+.msg .ok {
+background-color:#F0FFE5;
+background-position:3px -247px;
+border-color:#4DBF00;
+}
+.msg .notice {
+background-color:#E6F5FF;
+background-position:5px -295px;
+border-color:#40B3FF;
+}
+.msg .question {
+background-color:#F2F2F2;
+background-position:3px -347px;
+border-color:#BFBFBF;
+}
+.msg .small-help {
+background-color:#FFFFFF;
+background-position:5px -1095px;
+border-color:#FFFFFF;
+}
+.msg .help {
+background-color:#FFFFFF;
+background-position:3px -1197px;
+border-color:#FFFFFF;
+}

@@ -1,0 +1,61 @@
+/* --------------
+   *   dialog  *
+* ------------ */ 
+.l-dialog{ position:absolute;z-index: 10000; display:none; }
+.l-dialog-table{ }
+.l-dialog-body{ position:relative; overflow:hidden;}
+.l-dialog{ padding:0; margin:0;font-size:12px; } 
+.l-dialog td,.l-dialog tr,.l-dialog td div{font-size:12px; } 
+.l-dialog-cc{ background:white;}
+.l-dialog-tl,.l-dialog-tr,.l-dialog-bl,.l-dialog-br,.l-dialog-cl,.l-dialog-cr{width:13px;} 
+.l-dialog-tl,.l-dialog-tc,.l-dialog-tr{ height:33px;}
+.l-dialog-bl,.l-dialog-bc,.l-dialog-br{ height:13px;}
+
+.l-dialog-tl{background:url('ligerdialog/dialog-tl.png') no-repeat;}
+.l-dialog-tc{background:url('ligerdialog/dialog-tc.png') repeat-x;}
+.l-dialog-tr{background:url('ligerdialog/dialog-tr.png') no-repeat;}
+.l-dialog-bl{background:url('ligerdialog/dialog-bl.png') no-repeat;}
+.l-dialog-bc{background:url('ligerdialog/dialog-bc.png') repeat-x;}
+.l-dialog-br{background:url('ligerdialog/dialog-br.png') no-repeat;}
+.l-dialog-cl{background:url('ligerdialog/dialog-cl.png') repeat-y;}
+.l-dialog-cr{background:url('ligerdialog/dialog-cr.png') repeat-y;}
+
+.l-dialog-tc-inner{ position:relative;height:26px; line-height:26px; width:100%;  }
+.l-dialog-title {  color:#FFF; font-weight:700; text-shadow:0 0px 3px rgba(0, 0, 0, 0.7); padding-left:20px; padding-right:20px; text-align:left; padding-top:3px;}
+.l-dialog-tc-inner .l-dialog-icon{ position:absolute; left:3px; top:11px; width:11px; height:11px; overflow:hidden; background:url('ligerdialog/dialog-title-icon.png'); }
+.l-dialog-close{ position:absolute; right:0px; top:5px; background:url('ligerdialog/dialog-close.png') no-repeat; width:26px; height:15px; overflow:hidden; background-position:0px 0px; cursor:pointer; _top:6px;}
+.l-dialog-close-over{ background-position:0px -15px;}
+
+.l-dialog-content{ color:#000000;padding-left:20px; padding-top:16px;padding-bottom:20px;}
+.l-dialog-content-noimage {padding-left:6px; padding-top:10px;padding-bottom:10px;}
+.l-dialog-content-nopadding{ padding:0;}
+.l-dialog-content iframe {border: none;width: 100%;height: 100%;}
+.l-dialog-image{ width:48px; height:48px; overflow:hidden; display:none; position:absolute; top:10px; left:10px;background:url('ligerdialog/dialog-icons.png') no-repeat;}
+.l-dialog-image-donne{ background-position:0px 0px; }
+.l-dialog-image-error{ background-position:0px -48px; }
+.l-dialog-image-question{ background-position:0px -144px; }
+.l-dialog-image-warn{ background-position:0px -96px; }
+
+
+.l-dialog-buttons{ height:30px; line-height:30px; position:relative;margin-top:4px; background:#f6f6f6; padding-top:6px;}
+.l-dialog-buttons-inner{}
+.l-dialog-btn{ height:24px; overflow:hidden;background:url('ligerdialog/box-btn.gif') repeat-x; width:70px; line-height:24px; cursor:pointer; position:relative; float:right; margin-right:5px;}
+.l-dialog-btn-over{background:url('ligerdialog/box-btn-over.gif') repeat-x;}
+.l-dialog-btn-inner{color:#000000; text-align:center;}
+.l-dialog-btn-l{ height:24px; position:absolute; left:0px; top:0px; width:4px; background:url('ligerdialog/box-btn-l.gif') no-repeat;}
+.l-dialog-btn-over .l-dialog-btn-l{background:url('ligerdialog/box-btn-l-over.gif') no-repeat;}
+.l-dialog-btn-r{ height:24px; position:absolute; right:0px; top:0px; width:4px; background:url('ligerdialog/box-btn-r.gif') no-repeat;}
+.l-dialog-btn-over .l-dialog-btn-r{background:url('ligerdialog/box-btn-r-over.gif') no-repeat;}
+
+.l-dialog-inputtext{ width:280px; border:1px solid #0099CC; line-height:23px; height:25px;}
+.l-dialog-textarea{ width:280px; border:1px solid #0099CC;  height:80px;}
+
+
+.l-dialog .l-resizable-h-l {  top:2px; left:2px;}
+.l-dialog .l-resizable-h-r {  top:2px; right:2px;}
+.l-dialog .l-resizable-h-c {  top:2px; left:2px;}
+.l-dialog .l-resizable-c-l {  top:2px; left:2px; }
+.l-dialog .l-resizable-c-r { top:2px; right:2px; }
+.l-dialog .l-resizable-f-l { bottom:2px; left:2px;}
+.l-dialog .l-resizable-f-r { bottom:2px; right:2px; }
+.l-dialog .l-resizable-f-c {  bottom:2px; left:2px; }

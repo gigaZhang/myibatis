@@ -1,0 +1,99 @@
+@charset "utf-8";
+/*分页样式*/
+
+.pagination{
+	zoom:1;
+	margin-top:5px;
+	background:#97d6f1;
+	width:99%;
+	color:#47718f;
+	height:28px;
+	padding-top:5px;
+
+	
+}
+.pagination input{
+	height:16px;
+}
+.pagination select{
+	height:20px;
+	border:1px solid #47718f;
+}
+.pagination table{
+	float:left;
+}
+.pagination img{
+	padding-top:3px
+}
+.pagination table td.navi{
+	background:none repeat scroll 0 0 transparent;
+	padding-left:3px;
+	padding-right:3px;
+	color:#2e7193;
+	cursor:pointer;
+	display:inline-block;
+	font-size:12px;
+	height:24px;
+	outline:medium none;
+	text-decoration:none;
+	vertical-align: middle;
+	text-align: center;
+}
+.pagination table td.number{
+	background:none repeat scroll 0 0 transparent;
+	padding-right:2px;
+	color:#fff;
+	cursor:pointer;
+	display:inline-block;
+	font-size:12px;
+	height:24px;
+	outline:medium none;
+	padding-right:2px;
+	text-decoration:none;
+	vertical-align: middle;
+	text-align: center;
+}
+.pagination-separator{
+	float:left;
+	height:18px;
+	border-left:1px solid #7cbedb;
+	border-right:1px solid #cbeefd;
+	margin:3px 1px;
+}
+.pagination-num{
+	border:1px solid #47718f;
+	margin:0 2px;
+}
+.pagination-page-list{
+	margin:0px 6px;
+}
+.pagination-info{
+	float:right;
+	padding-right:6px;
+	padding-left:6px;
+	
+	font-size:12px;
+	line-height:24px;
+	vertical-align: middle;
+}
+.pagination-info1{
+	float:right;
+	padding-right:6px;
+	padding-left:6px;
+	
+	font-size:12px;
+	line-height:24px;
+	vertical-align: middle;
+}
+.pagination span{
+	font-size:12px;
+}
+
+/*页面数字*/
+.pagination .page_num{
+	color: #47718f;
+}
+/*当前页面数字*/
+.pagination .cur_page_num{
+	color: #ff5500;
+}

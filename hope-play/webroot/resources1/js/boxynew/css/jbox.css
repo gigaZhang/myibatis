@@ -1,0 +1,76 @@
+@CHARSET "UTF-8";
+.jBox {
+	position: absolute;
+	padding:5px;
+	visibility: hidden;
+	text-align: left;
+	background:url("img/box_bg.gif") #61c4f5 top repeat-x;
+	border:1px solid #61c4f5;
+	border-bottom:1px #279dd0 solid;
+	border-right:1px #279dd0 solid;
+}
+
+.jBoxHandler {
+	padding: 2px 0px;
+	text-indent: 3px;
+	font: bold 12px 微软雅黑;
+	color: #fff;
+	cursor: move;
+	overflow: hidden;
+	width: auto;
+	line-height:18px;
+	height: 18px;
+	
+	
+}
+.jBoxButton{
+	margin-top:6px;
+	text-align: center;
+	padding-top:3px;
+	height:25px;
+	}
+
+.jBoxButton button{
+	background:url("img/btn_bg.gif");
+	text-align: center;
+	border: none;
+	height:22px;
+	width:82px;
+	margin-left: 10px;
+	cursor: pointer;
+	color:#2781ad;
+	
+	
+}
+
+.jBoxButton .mhover{
+	background:url("img/btn_hover.gif");
+	border: none;
+	
+}
+
+
+.jBoxHandler .jBoxControls {
+	position: absolute;
+	right: 6px;
+	top: 10px;
+	cursor: hand;
+	cursor: pointer;
+}
+
+.jBoxHandler .jBoxControls img {
+   margin-left:2px
+}
+.jBoxContent {
+	margin-top:6px;
+	background-color: #fff;
+	color: #000;
+	height: 150px;
+	padding: 1px ;
+	overflow: auto;
+	border-right:1px #b8ecff solid;
+	border-bottom:1px #b8ecff solid;
+	border-left:1px #279dd0 solid;
+	border-top:1px #279dd0 solid;
+}
+
