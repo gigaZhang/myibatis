@@ -1,0 +1,62 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!--start开发环境中使用-->
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+	<!--end开发环境中使用-->
+	<!-- 上传文件大小限制 100M 
+		<constant name="struts.multipart.maxSize" value="104857600" />-->
+	<!--编码-->
+	<constant name="struts.locale" value="UTF-8" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<!-- 设置convention默认信息-->
+	<constant name="struts.convention.action.packages"
+		value="com.*.action" />
+	<!--搜索action资源包路径，无论层级，多项以逗号隔开-->
+	<constant name="struts.convention.package.locators" value="action" />
+	<constant name="struts.action.extension" value="do" />
+	<!-- 检查是否实现action -->
+	<constant name="struts.convention.action.checkImplementsAction"
+		value="true" />
+	<!--结果资源返回路径，也就是返回的页面路径 -->
+	<constant name="struts.convention.result.path" value="/view" />
+	<!--是否重新自动加载Action-->
+	<constant name="struts.convention.classes.reload" value="true" />
+	<!--是否将Action类名转换成小写-->
+	<constant name="struts.convention.action.name.lowercase"
+		value="true" />
+	<!--类名的最后组成部分，比如设置成qqq，则MyTestqqq将视为action，而MyTest则不是，访问时，会截去这部分-->
+	<constant name="struts.convention.action.suffix" value="Action" />
+	<!--名字分隔符，即MyTest访问名为my-test，默认对应页面为my-test-success.jsp-->
+	<constant name="struts.convention.action.name.separator" value="" />
+
+	<constant name="struts.ui.theme" value="simple" />
+
+	<constant name="struts.configuration.classpath.defaultParentPackage"
+		value="com" />
+	<!-- action用spring托管-->
+	<constant name="struts.objectFactory" value="spring"></constant>
+
+	<!-- 配置应用通用信息 -->
+	<package name="com" extends="struts-default">
+		<!-- 定义相关的过滤器 -->
+		<interceptors>
+			<interceptor-stack name="normalStack">
+				<interceptor-ref name="paramsPrepareParamsStack" />
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="normalStack" />
+		<global-results>
+			<result name="exception">/view/error.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="exception"
+				exception="java.lang.Exception">
+			</exception-mapping>
+		</global-exception-mappings>
+
+
+	</package>
+
+</struts>
