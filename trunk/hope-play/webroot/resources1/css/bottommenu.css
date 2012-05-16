@@ -1,0 +1,102 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+.bottommenu_div{
+	width: 100%; 
+	position: absolute ; 
+	left: 0px; 
+	bottom: 0px;
+	background:url("images/bottommenu_bg.jpg");
+	z-index: 1000;
+}
+
+.bottommenu_right{
+	width: 120px;
+	clear: right;
+	float: right;
+	color:#074981;
+	font-weight: bold;
+}
+.bottommenu_left{
+	clear: left;
+	float: right;
+}
+.bottommenu_left li{
+	float: left;
+	cursor: pointer;
+	cursor:hand;
+	width:77px;
+	margin-left:1px;
+	margin-top:2px;
+	height:21px
+}
+.bottommenu_left .li01{
+	background:url("images/bottommenu_01.jpg");
+}
+.bottommenu_left .li01:hover{
+	background:url("images/bottommenu_01_b.jpg");
+}
+.bottommenu_left .li01_cd{
+	background:url("images/bottommenu_01_c.jpg");
+}
+
+
+
+.bottommenu_left .li02{
+	background:url("images/bottommenu_02.jpg");
+}
+.bottommenu_left .li02:hover{
+	background:url("images/bottommenu_02_b.jpg");
+}
+.bottommenu_left .li02_cd{
+	background:url("images/bottommenu_02_c.jpg");
+}
+
+
+
+.bottommenu_left .li03{
+	background:url("images/bottommenu_03.jpg");
+}
+.bottommenu_left .li03:hover{
+	background:url("images/bottommenu_03_b.jpg");
+}
+.bottommenu_left .li03_cd{
+	background:url("images/bottommenu_03_c.jpg");
+}
+
+
+.bottommenu_left .li04{
+	background:url("images/bottommenu_04.jpg");
+}
+.bottommenu_left .li04:hover{
+	background:url("images/bottommenu_04_b.jpg");
+}
+.bottommenu_left .li04_cd{
+	background:url("images/bottommenu_04_c.jpg");
+}
+
+
+.bottommenu_left .li05{
+	background:url("images/bottommenu_05.jpg");
+}
+.bottommenu_left .li05:hover{
+	background:url("images/bottommenu_05_b.jpg");
+}
+.bottommenu_left .li05_cd{
+	background:url("images/bottommenu_05_c.jpg");
+}
+
+
+.bottommenu_left .li06{
+	background:url("images/bottommenu_06.jpg");
+}
+.bottommenu_left .li06:hover{
+	background:url("images/bottommenu_06_b.jpg");
+}
+.bottommenu_left .li06_cd{
+	background:url("images/bottommenu_06_c.jpg");
+}
+
+

@@ -1,0 +1,197 @@
+.jDiv
+{
+
+	position: absolute; 
+	background-color: white;
+	display: none;
+	width:100px;
+	height:100px;
+}
+
+/**
+ * POPUP CONTAINER STYLES
+ */
+#popupMask {
+	position: absolute;
+	z-index: 200;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	opacity: .4;
+	filter: alpha(opacity=40);
+	/* this hack is so it works in IE
+	 * I find setting the color in the css gives me more flexibility 
+	 * than the PNG solution.
+	 */
+	background-color:transparent !important;
+	background-color: #333333;
+	/* this hack is for opera support
+	 * you can uncomment the background-image if you don't care about opera.
+	 * this gives you the flexibility to use any bg color that you want, instead of the png
+	* background-image/**/: url("../../images/jDivImages/maskBG.png") !important; /* For browsers Moz, Opera, etc. */
+	background-image:none;
+	background-repeat: repeat;
+	display:none;
+}
+
+/* Rule 1 of css/1.css */
+DIV {
+    PADDING-RIGHT: 0px;
+    PADDING-LEFT: 0px;
+    PADDING-BOTTOM: 0px;
+    MARGIN: 0px;
+    PADDING-TOP: 0px;
+} /* Rule 2 of css/1.css */
+
+.boxtest01{
+	position: absolute;
+	padding:5px;
+	text-align: left;
+	background:url("img/box_bg.gif") #61c4f5 top repeat-x;
+
+}
+
+.x-window {
+
+    ZOOM: 1
+} /* Rule 4 of css/1.css */
+
+.x-window-bwrap {
+    Z-INDEX: 1;
+    ZOOM: 1;
+    POSITION: relative
+} /* Rule 5 of css/1.css */
+
+.x-window-bwrap {
+    OVERFLOW: hidden
+} /* Rule 6 of css/1.css */
+
+.x-window-bl {
+    PADDING-LEFT: 6px;
+    BACKGROUND: #61c4f5;
+    ZOOM: 1;
+    border-left:1px solid #61c4f5;
+	border-bottom:1px #279dd0 solid;
+	border-right:1px #279dd0 solid;
+} /* Rule 7 of css/1.css */
+
+.x-window-br {
+    PADDING-RIGHT: 6px;
+    BACKGROUND: #61c4f5;
+    ZOOM: 1
+} /* Rule 8 of css/1.css */
+
+.x-window-bc {
+     BACKGROUND: #61c4f5;
+    ZOOM: 1
+} /* Rule 9 of css/1.css */
+
+.x-window-bc .x-window-footer {
+    FONT-SIZE: 0px;
+    PADDING-BOTTOM: 6px;
+    LINE-HEIGHT: 0;
+    ZOOM: 1
+} /* Rule 31 of css/1.css */
+
+.x-window-ml {
+    PADDING-LEFT: 6px;
+    BACKGROUND: #61c4f5;
+    border-left:1px solid #61c4f5;
+	border-right:1px #279dd0 solid;
+    ZOOM: 1
+} /* Rule 32 of css/1.css */
+.x-window-mr {
+    PADDING-RIGHT: 6px;
+    BACKGROUND: #61c4f5;
+    ZOOM: 1
+} /* Rule 33 of css/1.css */
+.x-window-mc {
+    BORDER-RIGHT: #99bbe8 10px solid;
+    BORDER-LEFT: #99bbe8 1px solid;
+    BORDER-BOTTOM: #99bbe8 1px solid;
+    BORDER-TOP: #99bbe8 1px solid;
+    padding:1px;
+    BACKGROUND: #61c4f5;
+    FONT: 12px tahoma, arial, helvetica, sans-serif;
+    COLOR: #000000;
+    overflow:auto;
+} /* Rule 34 of css/1.css */
+.x-window-plain .x-window-mc {
+	border:1px solid #61c4f5;
+	border-left:1px #279dd0 solid;
+	border-top:1px #279dd0 solid;
+	background:url("img/box_bg.gif") #61c4f5 top repeat-x;
+} /* Rule 36 of css/1.css */
+.x-window-dlg .x-window-mc
+{
+	/*BORDER-TOP-WIDTH: 0px;
+    BORDER-LEFT-WIDTH: 0px;
+    BORDER-BOTTOM-WIDTH: 0px;
+    BORDER-RIGHT-WIDTH: 0px*/
+	border: 1px;
+	background: #EBF1FA;
+} /* Rule 57 of css/1.css */
+.x-window-tl {
+    PADDING-LEFT: 6px;
+    Z-INDEX: 1;
+	background:url("img/box_bg.gif") #61c4f5 top repeat-x;
+	border-top:1px solid #61c4f5;
+    border-right:1px #279dd0 solid;
+	border-left:1px solid #61c4f5;
+    ZOOM: 1;
+    POSITION: relative
+} /* Rule 58 of css/1.css */
+.x-window-tr {
+    PADDING-RIGHT: 6px;
+    background:url("img/box_bg.gif") #61c4f5 top repeat-x;
+} /* Rule 59 of css/1.css */
+.x-window-tc {
+    background:url("img/box_bg.gif") #61c4f5 top repeat-x;
+    OVERFLOW: hidden;
+    ZOOM: 1
+} /* Rule 60 of css/1.css */
+.x-unselectable {
+    -moz-user-select: none;
+    -khtml-user-select: none
+} /* Rule 61 of css/1.css */
+.x-window-header {
+    OVERFLOW: hidden;
+    ZOOM: 1
+} /* Rule 62 of css/1.css */
+.x-window-tl .x-window-header {
+    PADDING-RIGHT: 0px;
+    PADDING-LEFT: 0px;
+    PADDING-BOTTOM: 2px;
+    FONT: bold 11px tahoma, arial, verdana, sans-serif;
+    COLOR: #fff;
+    PADDING-TOP: 10px
+} /* Rule 63 of css/1.css */
+.x-window-draggable {
+    CURSOR: default 
+} /* Rule 64 of css/1.css */
+.x-unselectable * {
+    -moz-user-select: none;
+    -khtml-user-select: none
+} /* Rule 65 of css/1.css */
+.x-window-header-text {
+    CURSOR: pointer
+} /* Rule 66 of css/1.css */
+.x-window-draggable .x-window-header-text {
+    CURSOR: default
+} /* Rule 67 of css/1.css */
+.x-window-dlg .x-window-header-text {
+    FONT-SIZE: 12px
+} /* Rule 68 of css/1.css */
+.x-tool {
+    BACKGROUND: url(../../images/jDivImages/tool-sprites.gif) no-repeat;
+    FLOAT: right;
+    MARGIN-LEFT: 2px;
+    OVERFLOW: hidden;
+    WIDTH: 15px;
+    CURSOR: pointer;
+    HEIGHT: 15px
+} /* Rule 69 of css/1.css */
+.x-tool-close {
+    BACKGROUND-POSITION: 0px 0px
+}

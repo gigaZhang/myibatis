@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* CSS Document */
+.left_body{
+	background:#a6e3ff;
+	color:#2d667d;
+	overflow: auto hidden;
+	height: 100%;
+	width: 100%;
+	padding:0;
+	margin:0;
+	font-family:微软雅黑,宋体,Arial;
+
+}
+.left_div{
+	padding:0px;
+	height:1500px;
+	width: 196px;
+	background:url(images/left_bg.jpg) left top repeat-y;
+	float:left;
+	
+}
+.left_inn_div{
+	padding:7px 10px 5px 10px;
+	height:1000px;
+	width: 176px;
+	background:url(images/left_div_bg.jpg) left top no-repeat;
+	float:left;
+}
+
+.left_inn_top{
+	height:20px;
+	width:176px;
+	float:left;
+	font-size:12px;
+	color:#3e8ca9;
+	
+}
+.left_inn_c{
+	height:1000px;
+	width:176px;
+	float:left;
+	margin-top:20px;
+}
+.left_bottom{
+	height:12px;
+	width: 196px;
+	background:url(images/left_bottom.jpg) left top no-repeat;
+	float:left;
+	position: absolute;
+	bottom:0px;
+	z-index: 555;
+	clear:both;
+
+}
